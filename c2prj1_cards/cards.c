@@ -89,7 +89,7 @@ card_t card_from_num(unsigned c) {
   card_t temp;
   int value,suit;
   suit=c/13;
-  value=c%13;
+  value=c%13+2;
   temp.value=value;
   temp.suit=suit;
   return temp;
