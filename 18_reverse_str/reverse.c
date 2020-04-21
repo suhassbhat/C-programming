@@ -5,9 +5,9 @@
 void reverse(char * str) {
   int i,n;
   char c;
-  n=strlen(str);
   if (str==NULL)
     return;
+  n=strlen(str);
   for(i=0;i<=(n-1)/2;i++)
     {
       c=str[i];
