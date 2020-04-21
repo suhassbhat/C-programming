@@ -6,15 +6,10 @@ void reverse(char * str) {
   int i,n;
   char c;
   n=strlen(str);
-  char temp[n];
-  for(i=0;i<n;i++)
+  for(i=0;i<=(n-1)/2;i++)
     {
-      temp[i]=str[i];
-    }
-  for(i=0;i<n;i++)
-    {
-      c=temp[i];
-      temp[i]=str[n-1-i];
+      c=str[i];
+      str[i]=str[n-1-i];
       str[n-1-i]=c;
     }
   //WRITE ME!
