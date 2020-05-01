@@ -1,9 +1,13 @@
-Grading at Fri May  1 08:26:26 UTC 2020
+Grading at Fri May  1 08:30:28 UTC 2020
 Attempting to compile power.c
 power.c: In function ‘power’:
 power.c:5:21: error: initializer element is not constant
    static unsigned a=x;
                      ^
+power.c:5:19: error: unused variable ‘a’ [-Werror=unused-variable]
+   static unsigned a=x;
+                   ^
+cc1: all warnings being treated as errors
 The code did not compile!
 
 Overall Grade: F
