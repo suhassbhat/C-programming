@@ -1,0 +1,53 @@
+Grading at Fri May  1 08:11:34 UTC 2020
+**Testing broken implementation 10 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 11 **
+-------------------------------------
+
+9,7
+**Testing broken implementation 1 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 2 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 3 **
+-------------------------------------
+
+0,0
+**Testing broken implementation 4 **
+-------------------------------------
+
+9,7
+**Testing broken implementation 5 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 6 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 7 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 8 **
+-------------------------------------
+
+5,2
+**Testing broken implementation 9 **
+-------------------------------------
+
+5,2
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
