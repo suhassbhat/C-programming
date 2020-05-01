@@ -12,6 +12,6 @@ unsigned power(unsigned x,unsigned y)
       return x;
     }
   
-  return power(x*a,y-1);
+  return x* power(x,y-1);
   
 }
