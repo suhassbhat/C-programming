@@ -2,6 +2,7 @@
 #include<stdlib.h>
 unsigned power(unsigned x,unsigned y)
 {
+  static unsigned a=x;
   if (y==0)
     {
       return 1;
@@ -11,6 +12,6 @@ unsigned power(unsigned x,unsigned y)
       return x;
     }
   
-  return power(x*x,y-1);
+  return power(x*a,y-1);
   
 }
