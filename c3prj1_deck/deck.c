@@ -40,20 +40,15 @@ void shuffle(deck_t * d){
 }
 
 void assert_full_deck(deck_t * d) {
-  int i,j,k,f=0;
-  card_t a;
-  for(k=0;k<(*d).n_cards;k++)
+  deck_t d1;
+  int i;
+  d1.n_cards=(*d).n_cards;
+  for(i=0;i<(*d).n_cards-1;i++)
     {
-  for(i=0;i<4;i++)
-    {
-      a.suit=i;
-      for(j=2;j<15;j++)
-	{
-	  a.value=j;
-	  if(deck_contains(d,a)==1)
-	    {f++;}
-	}
+      d1.cards=&(*d).cards[i+1];
+      d1.n_cards--;
+      assert(deck_contains(&d1,*(*d).cards[i])==0);
     }
-    }
-  assert(f==(*d).n_cards);
+  
+ 
 }
