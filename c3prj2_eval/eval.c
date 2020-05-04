@@ -100,7 +100,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   int a,i,b=1;
-  if((*(*hand).cards[index]).suit!=fs)
+  if((*(*hand).cards[index]).suit!=fs||fs==NUM_SUITS)
     {
       return 0;
     }
