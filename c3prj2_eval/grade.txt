@@ -1,0 +1,505 @@
+Grading at Mon May  4 06:55:03 UTC 2020
+Compiling your code
+rm -f test poker cards.o my-test-main.o *~
+cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
+cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o eval.o eval.c
+cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
+gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
+Testcase 1: Trying hands with nothing
+Valgrind returned an error status
+==341== Memcheck, a memory error detector
+==341== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==341== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==341== Command: ./test-eval inp.1.txt
+==341== Parent PID: 340
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4027D0: describe_hand (test-eval.c:54)
+==341==    by 0x402B11: main (test-eval.c:116)
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4020C4: evaluate_hand (eval.c:327)
+==341==    by 0x4028E6: describe_hand (test-eval.c:68)
+==341==    by 0x402B11: main (test-eval.c:116)
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4027D0: describe_hand (test-eval.c:54)
+==341==    by 0x402B31: main (test-eval.c:119)
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4020C4: evaluate_hand (eval.c:327)
+==341==    by 0x4028E6: describe_hand (test-eval.c:68)
+==341==    by 0x402B31: main (test-eval.c:119)
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4020C4: evaluate_hand (eval.c:327)
+==341==    by 0x401BAC: compare_hands (eval.c:222)
+==341==    by 0x402B86: main (test-eval.c:124)
+==341== 
+==341== Conditional jump or move depends on uninitialised value(s)
+==341==    at 0x4016A4: get_largest_element (eval.c:54)
+==341==    by 0x4020C4: evaluate_hand (eval.c:327)
+==341==    by 0x401C07: compare_hands (eval.c:223)
+==341==    by 0x402B86: main (test-eval.c:124)
+==341== 
+==341== 
+==341== HEAP SUMMARY:
+==341==     in use at exit: 0 bytes in 0 blocks
+==341==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
+==341== 
+==341== All heap blocks were freed -- no leaks are possible
+==341== 
+==341== For counts of detected and suppressed errors, rerun with: -v
+==341== Use --track-origins=yes to see where uninitialised values come from
+==341== ERROR SUMMARY: 30 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 2: Trying hands with pairs
+Valgrind returned an error status
+==346== Memcheck, a memory error detector
+==346== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==346== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==346== Command: ./test-eval inp.2.txt
+==346== Parent PID: 345
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4027D0: describe_hand (test-eval.c:54)
+==346==    by 0x402B11: main (test-eval.c:116)
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4020C4: evaluate_hand (eval.c:327)
+==346==    by 0x4028E6: describe_hand (test-eval.c:68)
+==346==    by 0x402B11: main (test-eval.c:116)
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4027D0: describe_hand (test-eval.c:54)
+==346==    by 0x402B31: main (test-eval.c:119)
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4020C4: evaluate_hand (eval.c:327)
+==346==    by 0x4028E6: describe_hand (test-eval.c:68)
+==346==    by 0x402B31: main (test-eval.c:119)
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4020C4: evaluate_hand (eval.c:327)
+==346==    by 0x401BAC: compare_hands (eval.c:222)
+==346==    by 0x402B86: main (test-eval.c:124)
+==346== 
+==346== Conditional jump or move depends on uninitialised value(s)
+==346==    at 0x4016A4: get_largest_element (eval.c:54)
+==346==    by 0x4020C4: evaluate_hand (eval.c:327)
+==346==    by 0x401C07: compare_hands (eval.c:223)
+==346==    by 0x402B86: main (test-eval.c:124)
+==346== 
+==346== 
+==346== HEAP SUMMARY:
+==346==     in use at exit: 0 bytes in 0 blocks
+==346==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
+==346== 
+==346== All heap blocks were freed -- no leaks are possible
+==346== 
+==346== For counts of detected and suppressed errors, rerun with: -v
+==346== Use --track-origins=yes to see where uninitialised values come from
+==346== ERROR SUMMARY: 24 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 3: Trying hands with 2 pairs
+Valgrind returned an error status
+==351== Memcheck, a memory error detector
+==351== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==351== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==351== Command: ./test-eval inp.3.txt
+==351== Parent PID: 350
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4027D0: describe_hand (test-eval.c:54)
+==351==    by 0x402B11: main (test-eval.c:116)
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4020C4: evaluate_hand (eval.c:327)
+==351==    by 0x4028E6: describe_hand (test-eval.c:68)
+==351==    by 0x402B11: main (test-eval.c:116)
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4027D0: describe_hand (test-eval.c:54)
+==351==    by 0x402B31: main (test-eval.c:119)
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4020C4: evaluate_hand (eval.c:327)
+==351==    by 0x4028E6: describe_hand (test-eval.c:68)
+==351==    by 0x402B31: main (test-eval.c:119)
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4020C4: evaluate_hand (eval.c:327)
+==351==    by 0x401BAC: compare_hands (eval.c:222)
+==351==    by 0x402B86: main (test-eval.c:124)
+==351== 
+==351== Conditional jump or move depends on uninitialised value(s)
+==351==    at 0x4016A4: get_largest_element (eval.c:54)
+==351==    by 0x4020C4: evaluate_hand (eval.c:327)
+==351==    by 0x401C07: compare_hands (eval.c:223)
+==351==    by 0x402B86: main (test-eval.c:124)
+==351== 
+==351== 
+==351== HEAP SUMMARY:
+==351==     in use at exit: 0 bytes in 0 blocks
+==351==   total heap usage: 544 allocs, 544 frees, 18,344 bytes allocated
+==351== 
+==351== All heap blocks were freed -- no leaks are possible
+==351== 
+==351== For counts of detected and suppressed errors, rerun with: -v
+==351== Use --track-origins=yes to see where uninitialised values come from
+==351== ERROR SUMMARY: 60 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 4: Trying hands with 3 of a kind
+Valgrind returned an error status
+==356== Memcheck, a memory error detector
+==356== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==356== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==356== Command: ./test-eval inp.4.txt
+==356== Parent PID: 355
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4027D0: describe_hand (test-eval.c:54)
+==356==    by 0x402B11: main (test-eval.c:116)
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4020C4: evaluate_hand (eval.c:327)
+==356==    by 0x4028E6: describe_hand (test-eval.c:68)
+==356==    by 0x402B11: main (test-eval.c:116)
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4027D0: describe_hand (test-eval.c:54)
+==356==    by 0x402B31: main (test-eval.c:119)
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4020C4: evaluate_hand (eval.c:327)
+==356==    by 0x4028E6: describe_hand (test-eval.c:68)
+==356==    by 0x402B31: main (test-eval.c:119)
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4020C4: evaluate_hand (eval.c:327)
+==356==    by 0x401BAC: compare_hands (eval.c:222)
+==356==    by 0x402B86: main (test-eval.c:124)
+==356== 
+==356== Conditional jump or move depends on uninitialised value(s)
+==356==    at 0x4016A4: get_largest_element (eval.c:54)
+==356==    by 0x4020C4: evaluate_hand (eval.c:327)
+==356==    by 0x401C07: compare_hands (eval.c:223)
+==356==    by 0x402B86: main (test-eval.c:124)
+==356== 
+==356== 
+==356== HEAP SUMMARY:
+==356==     in use at exit: 0 bytes in 0 blocks
+==356==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==356== 
+==356== All heap blocks were freed -- no leaks are possible
+==356== 
+==356== For counts of detected and suppressed errors, rerun with: -v
+==356== Use --track-origins=yes to see where uninitialised values come from
+==356== ERROR SUMMARY: 36 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 5: Trying hands with straights
+Valgrind returned an error status
+==361== Memcheck, a memory error detector
+==361== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==361== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==361== Command: ./test-eval inp.5.txt
+==361== Parent PID: 360
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4027D0: describe_hand (test-eval.c:54)
+==361==    by 0x402B11: main (test-eval.c:116)
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4020C4: evaluate_hand (eval.c:327)
+==361==    by 0x4028E6: describe_hand (test-eval.c:68)
+==361==    by 0x402B11: main (test-eval.c:116)
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4027D0: describe_hand (test-eval.c:54)
+==361==    by 0x402B31: main (test-eval.c:119)
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4020C4: evaluate_hand (eval.c:327)
+==361==    by 0x4028E6: describe_hand (test-eval.c:68)
+==361==    by 0x402B31: main (test-eval.c:119)
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4020C4: evaluate_hand (eval.c:327)
+==361==    by 0x401BAC: compare_hands (eval.c:222)
+==361==    by 0x402B86: main (test-eval.c:124)
+==361== 
+==361== Conditional jump or move depends on uninitialised value(s)
+==361==    at 0x4016A4: get_largest_element (eval.c:54)
+==361==    by 0x4020C4: evaluate_hand (eval.c:327)
+==361==    by 0x401C07: compare_hands (eval.c:223)
+==361==    by 0x402B86: main (test-eval.c:124)
+==361== 
+==361== 
+==361== HEAP SUMMARY:
+==361==     in use at exit: 0 bytes in 0 blocks
+==361==   total heap usage: 360 allocs, 360 frees, 15,704 bytes allocated
+==361== 
+==361== All heap blocks were freed -- no leaks are possible
+==361== 
+==361== For counts of detected and suppressed errors, rerun with: -v
+==361== Use --track-origins=yes to see where uninitialised values come from
+==361== ERROR SUMMARY: 36 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 6: Trying hands with flushes
+Valgrind returned an error status
+==366== Memcheck, a memory error detector
+==366== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==366== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==366== Command: ./test-eval inp.6.txt
+==366== Parent PID: 365
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4027D0: describe_hand (test-eval.c:54)
+==366==    by 0x402B11: main (test-eval.c:116)
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4020C4: evaluate_hand (eval.c:327)
+==366==    by 0x4028E6: describe_hand (test-eval.c:68)
+==366==    by 0x402B11: main (test-eval.c:116)
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4027D0: describe_hand (test-eval.c:54)
+==366==    by 0x402B31: main (test-eval.c:119)
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4020C4: evaluate_hand (eval.c:327)
+==366==    by 0x4028E6: describe_hand (test-eval.c:68)
+==366==    by 0x402B31: main (test-eval.c:119)
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4020C4: evaluate_hand (eval.c:327)
+==366==    by 0x401BAC: compare_hands (eval.c:222)
+==366==    by 0x402B86: main (test-eval.c:124)
+==366== 
+==366== Conditional jump or move depends on uninitialised value(s)
+==366==    at 0x4016A4: get_largest_element (eval.c:54)
+==366==    by 0x4020C4: evaluate_hand (eval.c:327)
+==366==    by 0x401C07: compare_hands (eval.c:223)
+==366==    by 0x402B86: main (test-eval.c:124)
+==366== 
+==366== 
+==366== HEAP SUMMARY:
+==366==     in use at exit: 0 bytes in 0 blocks
+==366==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
+==366== 
+==366== All heap blocks were freed -- no leaks are possible
+==366== 
+==366== For counts of detected and suppressed errors, rerun with: -v
+==366== Use --track-origins=yes to see where uninitialised values come from
+==366== ERROR SUMMARY: 90 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 7: Trying hands with full houses
+Valgrind returned an error status
+==371== Memcheck, a memory error detector
+==371== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==371== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==371== Command: ./test-eval inp.7.txt
+==371== Parent PID: 370
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4027D0: describe_hand (test-eval.c:54)
+==371==    by 0x402B11: main (test-eval.c:116)
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4020C4: evaluate_hand (eval.c:327)
+==371==    by 0x4028E6: describe_hand (test-eval.c:68)
+==371==    by 0x402B11: main (test-eval.c:116)
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4027D0: describe_hand (test-eval.c:54)
+==371==    by 0x402B31: main (test-eval.c:119)
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4020C4: evaluate_hand (eval.c:327)
+==371==    by 0x4028E6: describe_hand (test-eval.c:68)
+==371==    by 0x402B31: main (test-eval.c:119)
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4020C4: evaluate_hand (eval.c:327)
+==371==    by 0x401BAC: compare_hands (eval.c:222)
+==371==    by 0x402B86: main (test-eval.c:124)
+==371== 
+==371== Conditional jump or move depends on uninitialised value(s)
+==371==    at 0x4016A4: get_largest_element (eval.c:54)
+==371==    by 0x4020C4: evaluate_hand (eval.c:327)
+==371==    by 0x401C07: compare_hands (eval.c:223)
+==371==    by 0x402B86: main (test-eval.c:124)
+==371== 
+==371== 
+==371== HEAP SUMMARY:
+==371==     in use at exit: 0 bytes in 0 blocks
+==371==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
+==371== 
+==371== All heap blocks were freed -- no leaks are possible
+==371== 
+==371== For counts of detected and suppressed errors, rerun with: -v
+==371== Use --track-origins=yes to see where uninitialised values come from
+==371== ERROR SUMMARY: 60 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 8: Trying hands with 4 of a kind
+Valgrind returned an error status
+==376== Memcheck, a memory error detector
+==376== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==376== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==376== Command: ./test-eval inp.8.txt
+==376== Parent PID: 375
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4027D0: describe_hand (test-eval.c:54)
+==376==    by 0x402B11: main (test-eval.c:116)
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4020C4: evaluate_hand (eval.c:327)
+==376==    by 0x4028E6: describe_hand (test-eval.c:68)
+==376==    by 0x402B11: main (test-eval.c:116)
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4027D0: describe_hand (test-eval.c:54)
+==376==    by 0x402B31: main (test-eval.c:119)
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4020C4: evaluate_hand (eval.c:327)
+==376==    by 0x4028E6: describe_hand (test-eval.c:68)
+==376==    by 0x402B31: main (test-eval.c:119)
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4020C4: evaluate_hand (eval.c:327)
+==376==    by 0x401BAC: compare_hands (eval.c:222)
+==376==    by 0x402B86: main (test-eval.c:124)
+==376== 
+==376== Conditional jump or move depends on uninitialised value(s)
+==376==    at 0x4016A4: get_largest_element (eval.c:54)
+==376==    by 0x4020C4: evaluate_hand (eval.c:327)
+==376==    by 0x401C07: compare_hands (eval.c:223)
+==376==    by 0x402B86: main (test-eval.c:124)
+==376== 
+==376== 
+==376== HEAP SUMMARY:
+==376==     in use at exit: 0 bytes in 0 blocks
+==376==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==376== 
+==376== All heap blocks were freed -- no leaks are possible
+==376== 
+==376== For counts of detected and suppressed errors, rerun with: -v
+==376== Use --track-origins=yes to see where uninitialised values come from
+==376== ERROR SUMMARY: 36 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 9: Trying hands with straight flushes
+Valgrind returned an error status
+==381== Memcheck, a memory error detector
+==381== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==381== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==381== Command: ./test-eval inp.9.txt
+==381== Parent PID: 380
+==381== 
+==381== Conditional jump or move depends on uninitialised value(s)
+==381==    at 0x4016A4: get_largest_element (eval.c:54)
+==381==    by 0x4027D0: describe_hand (test-eval.c:54)
+==381==    by 0x402B11: main (test-eval.c:116)
+==381== 
+==381== Conditional jump or move depends on uninitialised value(s)
+==381==    at 0x4016A4: get_largest_element (eval.c:54)
+==381==    by 0x4027D0: describe_hand (test-eval.c:54)
+==381==    by 0x402B31: main (test-eval.c:119)
+==381== 
+==381== 
+==381== HEAP SUMMARY:
+==381==     in use at exit: 0 bytes in 0 blocks
+==381==   total heap usage: 274 allocs, 274 frees, 13,808 bytes allocated
+==381== 
+==381== All heap blocks were freed -- no leaks are possible
+==381== 
+==381== For counts of detected and suppressed errors, rerun with: -v
+==381== Use --track-origins=yes to see where uninitialised values come from
+==381== ERROR SUMMARY: 10 errors from 2 contexts (suppressed: 0 from 0)
+Testcase 10: Trying each type of hand ranking
+Valgrind returned an error status
+==386== Memcheck, a memory error detector
+==386== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==386== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==386== Command: ./test-eval inp.10.txt
+==386== Parent PID: 385
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4027D0: describe_hand (test-eval.c:54)
+==386==    by 0x402B11: main (test-eval.c:116)
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4020C4: evaluate_hand (eval.c:327)
+==386==    by 0x4028E6: describe_hand (test-eval.c:68)
+==386==    by 0x402B11: main (test-eval.c:116)
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4027D0: describe_hand (test-eval.c:54)
+==386==    by 0x402B31: main (test-eval.c:119)
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4020C4: evaluate_hand (eval.c:327)
+==386==    by 0x4028E6: describe_hand (test-eval.c:68)
+==386==    by 0x402B31: main (test-eval.c:119)
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4020C4: evaluate_hand (eval.c:327)
+==386==    by 0x401BAC: compare_hands (eval.c:222)
+==386==    by 0x402B86: main (test-eval.c:124)
+==386== 
+==386== Conditional jump or move depends on uninitialised value(s)
+==386==    at 0x4016A4: get_largest_element (eval.c:54)
+==386==    by 0x4020C4: evaluate_hand (eval.c:327)
+==386==    by 0x401C07: compare_hands (eval.c:223)
+==386==    by 0x402B86: main (test-eval.c:124)
+==386== 
+==386== 
+==386== HEAP SUMMARY:
+==386==     in use at exit: 0 bytes in 0 blocks
+==386==   total heap usage: 3,988 allocs, 3,988 frees, 80,704 bytes allocated
+==386== 
+==386== All heap blocks were freed -- no leaks are possible
+==386== 
+==386== For counts of detected and suppressed errors, rerun with: -v
+==386== Use --track-origins=yes to see where uninitialised values come from
+==386== ERROR SUMMARY: 400 errors from 6 contexts (suppressed: 0 from 0)
+
+Overall Grade: F
