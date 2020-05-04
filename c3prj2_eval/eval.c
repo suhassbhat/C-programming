@@ -48,7 +48,7 @@ suit_t flush_suit(deck_t * hand) {
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
   int i;
-  unsigned l;
+  unsigned l=0;
   for (i=0;i<n;i++)
     {
       if(arr[i]>l)
