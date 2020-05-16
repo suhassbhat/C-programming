@@ -68,6 +68,10 @@ int main(int argc, char **argv)
     {
       key=fl-4;
     }
+  if (key<0)
+    {
+      key=key+26;
+    }
   printf("%d\n",key);
     if (fclose(f) != 0) {
       perror("Failed to close the input file!");
