@@ -31,7 +31,7 @@ int main(int argc,char **argv)
       fprintf(stderr,"Usage: rotateMatrix Inputfilename\n");
       return EXIT_FAILURE;
     }
-  FILE *f =fopen(argv[2],"r");
+  FILE *f =fopen(argv[1],"r");
   if (f==NULL)
     {
       fprintf(stderr,"%s does not exist\n",argv[2]);
