@@ -1,4 +1,4 @@
-include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 void rotate (char matrix[10][10])
 {
@@ -32,12 +32,12 @@ int main(int argc,char **argv)
       return EXIT_FAILURE;
     }
   FILE *f =fopen(argv[2],"r");
-  if (f=NULL)
+  if (f==NULL)
     {
       fprintf(stderr,"%s does not exist\n",argv[2]);
       return EXIT_FAILURE;
     }
-  while((a=fgets(f))!=EOF)
+  while((fgets(a,100,f))!=NULL)
     {
       FILE *g = fopen(a,"r");
       for(i=0;i<10;i++)
