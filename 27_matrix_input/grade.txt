@@ -1,147 +1,49 @@
-Grading at Thu May 28 18:01:38 UTC 2020
+Grading at Thu May 28 18:11:43 UTC 2020
 Attempting to compile rotateMatrix.c
-rotateMatrix.c:1:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
- include<stdio.h>
-        ^
-In file included from rotateMatrix.c:2:0:
-/usr/include/stdlib.h:139:8: error: unknown type name ‘size_t’
- extern size_t __ctype_get_mb_cur_max (void) __THROW __wur;
-        ^
-In file included from rotateMatrix.c:2:0:
-/usr/include/stdlib.h:331:4: error: unknown type name ‘size_t’
-    size_t __statelen) __THROW __nonnull ((2));
-    ^
-/usr/include/stdlib.h:361:4: error: unknown type name ‘size_t’
-    size_t __statelen,
-    ^
-/usr/include/stdlib.h:466:22: error: unknown type name ‘size_t’
- extern void *malloc (size_t __size) __THROW __attribute_malloc__ __wur;
-                      ^
-/usr/include/stdlib.h:468:22: error: unknown type name ‘size_t’
- extern void *calloc (size_t __nmemb, size_t __size)
-                      ^
-/usr/include/stdlib.h:468:38: error: unknown type name ‘size_t’
- extern void *calloc (size_t __nmemb, size_t __size)
-                                      ^
-/usr/include/stdlib.h:480:36: error: unknown type name ‘size_t’
- extern void *realloc (void *__ptr, size_t __size)
-                                    ^
-In file included from /usr/include/stdlib.h:492:0,
-                 from rotateMatrix.c:2:
-/usr/include/alloca.h:32:22: error: unknown type name ‘size_t’
- extern void *alloca (size_t __size) __THROW;
-                      ^
-In file included from rotateMatrix.c:2:0:
-/usr/include/stdlib.h:498:22: error: unknown type name ‘size_t’
- extern void *valloc (size_t __size) __THROW __attribute_malloc__ __wur;
-                      ^
-/usr/include/stdlib.h:503:45: error: unknown type name ‘size_t’
- extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
-                                             ^
-/usr/include/stdlib.h:503:65: error: unknown type name ‘size_t’
- extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
-                                                                 ^
-/usr/include/stdlib.h:755:9: error: unknown type name ‘size_t’
-         size_t __nmemb, size_t __size, __compar_fn_t __compar)
-         ^
-/usr/include/stdlib.h:755:25: error: unknown type name ‘size_t’
-         size_t __nmemb, size_t __size, __compar_fn_t __compar)
-                         ^
-/usr/include/stdlib.h:764:34: error: unknown type name ‘size_t’
- extern void qsort (void *__base, size_t __nmemb, size_t __size,
-                                  ^
-/usr/include/stdlib.h:764:50: error: unknown type name ‘size_t’
- extern void qsort (void *__base, size_t __nmemb, size_t __size,
-                                                  ^
-/usr/include/stdlib.h:843:6: error: unknown type name ‘size_t’
-      size_t __len) __THROW __nonnull ((3, 4, 5));
-      ^
-/usr/include/stdlib.h:846:6: error: unknown type name ‘size_t’
-      size_t __len) __THROW __nonnull ((3, 4, 5));
-      ^
-/usr/include/stdlib.h:850:31: error: unknown type name ‘size_t’
-       char *__restrict __buf, size_t __len)
-                               ^
-/usr/include/stdlib.h:854:31: error: unknown type name ‘size_t’
-       char *__restrict __buf, size_t __len)
-                               ^
-/usr/include/stdlib.h:862:36: error: unknown type name ‘size_t’
- extern int mblen (const char *__s, size_t __n) __THROW;
-                                    ^
-/usr/include/stdlib.h:866:34: error: unknown type name ‘size_t’
-      const char *__restrict __s, size_t __n) __THROW;
-                                  ^
-/usr/include/stdlib.h:873:8: error: unknown type name ‘size_t’
- extern size_t mbstowcs (wchar_t *__restrict  __pwcs,
-        ^
-/usr/include/stdlib.h:874:32: error: unknown type name ‘size_t’
-    const char *__restrict __s, size_t __n) __THROW;
-                                ^
-/usr/include/stdlib.h:876:8: error: unknown type name ‘size_t’
- extern size_t wcstombs (char *__restrict __s,
-        ^
-/usr/include/stdlib.h:877:38: error: unknown type name ‘size_t’
-    const wchar_t *__restrict __pwcs, size_t __n)
-                                      ^
-rotateMatrix.c: In function ‘main’:
-rotateMatrix.c:31:7: error: implicit declaration of function ‘fprintf’ [-Werror=implicit-function-declaration]
-       fprintf(stderr,"Usage: rotateMatrix Inputfilename\n");
-       ^
-rotateMatrix.c:31:7: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-rotateMatrix.c:31:7: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-rotateMatrix.c:31:15: error: ‘stderr’ undeclared (first use in this function)
-       fprintf(stderr,"Usage: rotateMatrix Inputfilename\n");
-               ^
-rotateMatrix.c:31:15: note: each undeclared identifier is reported only once for each function it appears in
-rotateMatrix.c:34:3: error: unknown type name ‘FILE’
-   FILE *f =fopen(argv[2],"r");
-   ^
-rotateMatrix.c:34:12: error: implicit declaration of function ‘fopen’ [-Werror=implicit-function-declaration]
-   FILE *f =fopen(argv[2],"r");
-            ^
-rotateMatrix.c:34:12: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
-rotateMatrix.c:35:3: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
-   if (f=NULL)
-   ^
-rotateMatrix.c:37:7: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-       fprintf(stderr,"%s does not exist\n",argv[2]);
-       ^
-rotateMatrix.c:37:7: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-rotateMatrix.c:40:12: error: implicit declaration of function ‘fgets’ [-Werror=implicit-function-declaration]
-   while((a=fgets(f))!=EOF)
-            ^
-rotateMatrix.c:40:11: error: assignment to expression with array type
-   while((a=fgets(f))!=EOF)
-           ^
-rotateMatrix.c:40:23: error: ‘EOF’ undeclared (first use in this function)
-   while((a=fgets(f))!=EOF)
-                       ^
-rotateMatrix.c:42:7: error: unknown type name ‘FILE’
-       FILE *g = fopen(a,"r");
-       ^
-rotateMatrix.c:42:17: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
-       FILE *g = fopen(a,"r");
-                 ^
-rotateMatrix.c:47:14: error: implicit declaration of function ‘fgetc’ [-Werror=implicit-function-declaration]
-        if((b=fgetc(g))==EOF)
-              ^
-rotateMatrix.c:49:5: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-     fprintf(stderr,"EOF encountered File too short\n");
-     ^
-rotateMatrix.c:49:5: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-rotateMatrix.c:56:9: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-         fprintf(stderr,"Line too long\n");
-         ^
-rotateMatrix.c:56:9: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-rotateMatrix.c:64:9: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-         fprintf(stderr,"Line too short\n");
-         ^
-rotateMatrix.c:64:9: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-rotateMatrix.c:73:4: error: incompatible implicit declaration of built-in function ‘fprintf’ [-Werror]
-    fprintf(stderr,"File too big\n");
-    ^
-rotateMatrix.c:73:4: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
-cc1: all warnings being treated as errors
-The code did not compile!
+testcase1 passed
+#################################################
+testcase2: NonExistentFile
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase3: blank.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase4: short-line.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase5: short-file.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase6: long-line.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase7: long-file.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase8: long-line-2.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase9: normal1.txt normal2.txt
+ (should indicate an error)
+testcase9 passed
+#################################################
+testcase10: normal1.txt
+valgrind reported memory errors
+#################################################
+testcase10: normal2.txt
+valgrind reported memory errors
+#################################################
+testcase10: normal3.txt
+valgrind reported memory errors
+#################################################
+testcase10: eof.txt
+valgrind reported memory errors
 
 Overall Grade: F
