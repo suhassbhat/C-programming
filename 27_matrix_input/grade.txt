@@ -1,4 +1,4 @@
-Grading at Fri May 29 05:22:08 UTC 2020
+Grading at Fri May 29 05:37:22 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -8,7 +8,7 @@ testcase2 passed
 #################################################
 testcase3: blank.txt
  (should indicate an error)
-testcase3 failed, your program didn't indicate this is a failure case
+testcase3 passed
 #################################################
 testcase4: short-line.txt
  (should indicate an error)
