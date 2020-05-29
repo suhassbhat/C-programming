@@ -81,6 +81,11 @@ int main(int argc,char **argv)
 	    }
 	  fprintf(stdout,"\n");
 	}
+      if(fclose(f)!=0)
+	{
+	  fprintf(stderr,"%s did not close",argv[1]);
+	  return EXIT_FAILURE;
+	}
   return EXIT_SUCCESS;
 }
     
