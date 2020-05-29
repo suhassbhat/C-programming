@@ -71,7 +71,16 @@ int main(int argc,char **argv)
 	  fprintf(stderr,"File too big\n");
 	  return EXIT_FAILURE;
 	}
+      
       rotate(c);
+      for(i=0;i<10;i++)
+	{
+	  for(j=0;j<10;j++)
+	    {
+	      fprintf(stdout,"%c",c[i][j]);
+	    }
+	  fprintf(stdout,"\n");
+	}
   return EXIT_SUCCESS;
 }
     
