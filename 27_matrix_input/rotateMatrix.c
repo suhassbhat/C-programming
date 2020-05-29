@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 void rotate (char matrix[10][10])
 {
   char temp[10][10];
@@ -47,7 +48,7 @@ int main(int argc,char **argv)
       FILE *g = fopen(a,"r");
       if (g==NULL)
 	{
-	  frintf(stderr,"%s could not open\n",a);
+	  fprintf(stderr,"%s could not open\n",a);
 	  return EXIT_FAILURE;
 	}
       for(i=0;i<10;i++)
