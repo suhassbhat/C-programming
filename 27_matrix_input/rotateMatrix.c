@@ -25,8 +25,8 @@ void rotate (char matrix[10][10])
 }
 int main(int argc,char **argv)
 {
-  char b,c[10][10];
-  int i,j;
+  char c[10][10];
+  int i,j,b;
   if (argc!=2)
     {
       fprintf(stderr,"Usage: rotateMatrix Inputfilename\n");
