@@ -25,7 +25,7 @@ void rotate (char matrix[10][10])
 }
 int main(int argc,char **argv)
 {
-  char a[100],b,c[10][10];
+  char b,c[10][10];
   int i,j;
   if (argc!=2)
     {
@@ -38,24 +38,11 @@ int main(int argc,char **argv)
       fprintf(stderr,"%s does not exist\n",argv[1]);
       return EXIT_FAILURE;
     }
-  while((fgets(a,100,f))!=NULL)
+  for (i=0;i<10;i++)
     {
-      if(strchr(a,'\n')==NULL)
-	{
-	  fprintf(stderr,"Line too long in %s\n",argv[1]);
-	  return EXIT_FAILURE;
-	}
-      FILE *g = fopen(a,"r");
-      if (g==NULL)
-	{
-	  fprintf(stderr,"%s could not open\n",a);
-	  return EXIT_FAILURE;
-	}
-      for(i=0;i<10;i++)
-	{
-	  for(j=0;j<11;j++)
+  for(j=0;j<11;j++)
 	    {
-	      if((b=fgetc(g))==EOF)
+	      if((b=fgetc(f))==EOF)
 		{
 		  fprintf(stderr,"EOF encountered File too short\n");
 		  return EXIT_FAILURE;
@@ -79,14 +66,13 @@ int main(int argc,char **argv)
 		}
 	    }
 	}
-      if((b=fgetc(g))!=EOF)
+      if((b=fgetc(f))!=EOF)
 	{
 	  fprintf(stderr,"File too big\n");
 	  return EXIT_FAILURE;
 	}
       rotate(c);
-    }
-  return EXIT_FAILURE;
+  return EXIT_SUCCESS;
 }
     
       
