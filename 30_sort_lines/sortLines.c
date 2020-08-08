@@ -22,7 +22,7 @@ int main(int argc, char ** argv) {
   char *line=NULL;
   size_t size=0;
   size_t i=0;
-  int j,k=0;
+  int j,k=1;
   if (argc<1)
     {
       return EXIT_FAILURE;
@@ -51,6 +51,9 @@ int main(int argc, char ** argv) {
     {
       while(argc>k)
 	{
+	  i=0;
+	  line=NULL;
+	  size=0;
 	  FILE *f =fopen(argv[k],"r");
 	  while (getline(&line,&size,f)>=0)
 	    {
