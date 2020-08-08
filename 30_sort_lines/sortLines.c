@@ -63,8 +63,8 @@ int main(int argc, char ** argv) {
 	  sortData(data,i);
 	  for(j=0;j<i;j++)
 	    {
-	      printf("%s",data[i]);
-	      free(data[i]);
+	      printf("%s",data[j]);
+	      free(data[j]);
 	    }
 	  free(data);
 	  k++;
