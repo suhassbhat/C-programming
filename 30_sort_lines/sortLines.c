@@ -56,6 +56,12 @@ int main(int argc, char ** argv) {
 	  line=NULL;
 	  data=NULL;
 	  FILE *f =fopen(argv[k],"r");
+	  if (f==NULL)
+	    {
+	      perror("File couldn't open\n");
+	      return EXIT_FAILURE;
+	    }
+		
 	    while(getline(&line,&size,f)>=0)
 	      {
 		data=realloc(data,(i+1)*sizeof(*data));
