@@ -29,8 +29,7 @@ int main(int argc, char ** argv) {
     }
   if (argc==1)
     {
-      
-      //WRITE YOUR CODE HERE!
+	  //WRITE YOUR CODE HERE!
       while(getline(&line,&size,stdin)>=0)
 	{
 	  data=realloc(data,(i+1)*sizeof(*data));
@@ -39,6 +38,7 @@ int main(int argc, char ** argv) {
 	  i++;
 	}
       free(line);
+      size=0;
       sortData(data,i);
       for(j=0;j<i;j++)
 	{
@@ -46,23 +46,25 @@ int main(int argc, char ** argv) {
 	  free(data[j]);
 	}
       free(data);
-    }
-  else
+      
+	}
+  if (argc>1)
     {
       while(argc>k)
 	{
 	  i=0;
 	  line=NULL;
-	  size=0;
+	  data=NULL;
 	  FILE *f =fopen(argv[k],"r");
-	  while (getline(&line,&size,f)>=0)
-	    {
-	      data=realloc(data,(i+1)*sizeof(*data));
-	      data[i]=line;
-	      line=NULL;
-	      i++;
-	    }
+	    while(getline(&line,&size,f)>=0)
+	      {
+		data=realloc(data,(i+1)*sizeof(*data));
+		data[i]=line;
+		line =NULL;
+		i++;
+	      }
 	  free(line);
+	  size=0;
 	  sortData(data,i);
 	  for(j=0;j<i;j++)
 	    {
@@ -71,7 +73,15 @@ int main(int argc, char ** argv) {
 	    }
 	  free(data);
 	  k++;
+	  if (fclose(f)!=0)
+	    {
+	      perror("File did not close\n");
+	      return EXIT_FAILURE;
+	    }
+	
 	}
-    }	  
+    }
+	  
+	   
   return EXIT_SUCCESS;
 }
