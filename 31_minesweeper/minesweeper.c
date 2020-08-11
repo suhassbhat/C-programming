@@ -120,7 +120,7 @@ void printBoard(board_t * b) {
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
 int countMines(board_t * b, int x, int y) {
-  int i,j,count;//WRITE ME!
+  int i,j,count=0;//WRITE ME!
   for(i=y-1;i<y+2;i++)
     {
       for(j=x-1;j<x+2;j++)
@@ -129,7 +129,7 @@ int countMines(board_t * b, int x, int y) {
 	    {
 	      continue;
 	    }
-	  if((i<0)||(i>b->height)||(j<0)||(j>b->width))
+	  if((i<0)||(i>=b->height)||(j<0)||(j>=b->width))
 	    {
 	      continue;
 	    }
@@ -180,9 +180,12 @@ void freeBoard(board_t * b) {
   for(i=0;i<b->height;i++)
     {
       free(b->board[i]);
+      b->board[i]=NULL;
     }
   free(b->board);
+  b->board=NULL;
   free(b);
+  b=NULL;
 }
 
 int readInt(char ** linep, size_t * lineszp) {
