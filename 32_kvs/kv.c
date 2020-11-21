@@ -79,6 +79,7 @@ kvarray_t * readKVs(const char * fname) {
     }
   arr=(kvarray_t *)malloc(sizeof(kvarray_t));
   arr->n=0;
+  arr->a=NULL;
   while ((len=getline(&line,&sz,f))>=0)
     {
       if(legit(line))
