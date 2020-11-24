@@ -254,7 +254,7 @@ unsigned * get_match_counts(deck_t * hand)
   for (i=0;i<hand->n_cards;i++)
     {
       a[i]=0;
-      for(j=i;j<hand->n_cards;j++)
+      for(j=0;j<hand->n_cards;j++)
 	{
 	  if(hand->cards[i]->value==hand->cards[j]->value)
 	    {
