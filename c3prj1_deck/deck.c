@@ -93,6 +93,9 @@ deck_t * build_remaining_deck (deck_t **hands, size_t n_hands)
   int i,j;
   deck_t * d=NULL;
   deck_t * e=NULL;
+  e=(deck_t *) malloc(sizeof(deck_t));
+  e->n_cards=0;
+  e->cards=NULL;
   for (i=0;i<n_hands;i++)
     {
       for (j=0;j<hands[i]->n_cards;j++)
