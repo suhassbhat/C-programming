@@ -16,15 +16,15 @@ deck_t * hand_from_string(const char * line,future_cards_t * fc)
   d->cards=NULL;
       for (i=0;i<strlen(line);i++)
 	{
-	  if(line[i]=';')
+	  if(line[i]==';')
 	    {
 	      break;
 	    }
-	  if(line[i]=' '||line[i]=',')
+	  if(line[i]==' '||line[i]==',')
 	    {
 	      continue;
 	    }
-	  else if(line[i]='?')
+	  else if(line[i]=='?')
 	    {
 	      index=line[i+1] - '0';
 	      add_future_card(fc,index,add_empty_card(d));
@@ -49,7 +49,7 @@ deck_t * hand_from_string(const char * line,future_cards_t * fc)
   return d;
 }
 
-deck_t ** read_input (FILE *f, size_t * n_hands, futrue_cards_t * fc)
+deck_t ** read_input (FILE *f, size_t * n_hands, future_cards_t * fc)
 {
   deck_t ** deck = NULL;
   size_t sz =0;
