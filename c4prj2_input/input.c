@@ -65,13 +65,15 @@ deck_t ** read_input (FILE *f, size_t * n_hands, future_cards_t * fc)
   *n_hands=0;
   while((len=getline(&line,&sz,f))>=0)
     {
+      rmnlff(line);
       if(strlen(line)>0)
 	{
-	  rmnlff(line);
-      (*n_hands)++;
+	    (*n_hands)++;
       deck=(deck_t **)realloc(deck, (*n_hands)*sizeof(deck_t *));
       deck[(*n_hands)-1]=hand_from_string(line,fc);
-	}}
+	    }
+	
+	}
   free(line);
   return deck;
 }
