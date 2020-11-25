@@ -33,7 +33,7 @@ deck_t * hand_from_string(const char * line,future_cards_t * fc)
 	    }
 	  else
 	    {
-	      c=card_from_letters(line[i],line[i+1]);
+	      c=card_from_letters(line[i+1],line[i]);
 	      assert_card_valid(c);
 	      add_card_to(d,c);
 	      i++;
