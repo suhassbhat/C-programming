@@ -14,8 +14,8 @@ void rmnlff(char *line)
 }
 deck_t * hand_from_string(const char * line,future_cards_t * fc)
 {
-  int i;
-  size_t index;
+  int i,j;
+  size_t index1,index2;
   deck_t * d;
   card_t c;
   d = (deck_t *)malloc(sizeof(deck_t));
@@ -33,8 +33,15 @@ deck_t * hand_from_string(const char * line,future_cards_t * fc)
 	    }
 	  else if(line[i]=='?')
 	    {
-	      index=line[i+1] - '0';
-	      add_future_card(fc,index,add_empty_card(d));
+	      j=0;
+	      index2=0;
+	      while((line[j+i+1]>='0')&&(line[j+i+1]<='9'))
+		{
+	      index1=line[i+1+j] - '0';
+	      index2=index2*10+index1;
+	      j++;
+		}
+	      add_future_card(fc,index2,add_empty_card(d));
 	      i++;
 	      continue;
 	    }
@@ -68,10 +75,13 @@ deck_t ** read_input (FILE *f, size_t * n_hands, future_cards_t * fc)
       rmnlff(line);
       if(strlen(line)>0)
 	{
+	  if(line[0]!='\n')
+	    {
 	    (*n_hands)++;
       deck=(deck_t **)realloc(deck, (*n_hands)*sizeof(deck_t *));
       deck[(*n_hands)-1]=hand_from_string(line,fc);
 	    }
+	}
 	
 	}
   free(line);
