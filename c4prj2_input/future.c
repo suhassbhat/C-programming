@@ -3,6 +3,8 @@
 #include<string.h>
 #include "future.h"
 #include "eval.h"
+#include "deck.h"
+#include "cards.h"
 
 void add_future_card (future_cards_t *fc, size_t index, card_t *ptr)
 {
