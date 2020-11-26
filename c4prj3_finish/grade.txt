@@ -1,4 +1,4 @@
-Grading at Thu Nov 26 14:59:36 UTC 2020
+Grading at Thu Nov 26 15:10:04 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -11,485 +11,51 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
-Valgrind reported errors:
-==740== Memcheck, a memory error detector
-==740== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==740== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==740== Command: ./poker inp.txt 20000
-==740== Parent PID: 739
-==740== 
-==740== Conditional jump or move depends on uninitialised value(s)
-==740==    at 0x402A87: add_future_card (future.c:12)
-==740==    by 0x402CB1: hand_from_string (input.c:44)
-==740==    by 0x402DEE: read_input (input.c:82)
-==740==    by 0x4009E0: main (main.c:55)
-==740== 
-==740== Conditional jump or move depends on uninitialised value(s)
-==740==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==740==    by 0x402AE2: add_future_card (future.c:14)
-==740==    by 0x402CB1: hand_from_string (input.c:44)
-==740==    by 0x402DEE: read_input (input.c:82)
-==740==    by 0x4009E0: main (main.c:55)
-==740== 
-==740== Conditional jump or move depends on uninitialised value(s)
-==740==    at 0x402AF8: add_future_card (future.c:15)
-==740==    by 0x402CB1: hand_from_string (input.c:44)
-==740==    by 0x402DEE: read_input (input.c:82)
-==740==    by 0x4009E0: main (main.c:55)
-==740== 
-==740== Use of uninitialised value of size 8
-==740==    at 0x402B04: add_future_card (future.c:17)
-==740==    by 0x402CB1: hand_from_string (input.c:44)
-==740==    by 0x402DEE: read_input (input.c:82)
-==740==    by 0x4009E0: main (main.c:55)
-==740== 
-==740== Conditional jump or move depends on uninitialised value(s)
-==740==    at 0x402B1A: add_future_card (future.c:15)
-==740==    by 0x402CB1: hand_from_string (input.c:44)
-==740==    by 0x402DEE: read_input (input.c:82)
-==740==    by 0x4009E0: main (main.c:55)
-==740== 
-==740== 
-==740== HEAP SUMMARY:
-==740==     in use at exit: 224 bytes in 16 blocks
-==740==   total heap usage: 80,103 allocs, 80,087 frees, 2,258,516 bytes allocated
-==740== 
-==740== LEAK SUMMARY:
-==740==    definitely lost: 112 bytes in 2 blocks
-==740==    indirectly lost: 112 bytes in 14 blocks
-==740==      possibly lost: 0 bytes in 0 blocks
-==740==    still reachable: 0 bytes in 0 blocks
-==740==         suppressed: 0 bytes in 0 blocks
-==740== Rerun with --leak-check=full to see details of leaked memory
-==740== 
-==740== For counts of detected and suppressed errors, rerun with: -v
-==740== Use --track-origins=yes to see where uninitialised values come from
-==740== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 34.25%
+ ** Hand 1 differed from our answer by 64.65%
+*** Test case failed ***
 Running a simulation with 25000 draws for 3 hands...
-Valgrind reported errors:
-==745== Memcheck, a memory error detector
-==745== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==745== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==745== Command: ./poker inp.txt 25000
-==745== Parent PID: 744
-==745== 
-==745== Conditional jump or move depends on uninitialised value(s)
-==745==    at 0x402A87: add_future_card (future.c:12)
-==745==    by 0x402CB1: hand_from_string (input.c:44)
-==745==    by 0x402DEE: read_input (input.c:82)
-==745==    by 0x4009E0: main (main.c:55)
-==745== 
-==745== Conditional jump or move depends on uninitialised value(s)
-==745==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==745==    by 0x402AE2: add_future_card (future.c:14)
-==745==    by 0x402CB1: hand_from_string (input.c:44)
-==745==    by 0x402DEE: read_input (input.c:82)
-==745==    by 0x4009E0: main (main.c:55)
-==745== 
-==745== Conditional jump or move depends on uninitialised value(s)
-==745==    at 0x402AF8: add_future_card (future.c:15)
-==745==    by 0x402CB1: hand_from_string (input.c:44)
-==745==    by 0x402DEE: read_input (input.c:82)
-==745==    by 0x4009E0: main (main.c:55)
-==745== 
-==745== Use of uninitialised value of size 8
-==745==    at 0x402B04: add_future_card (future.c:17)
-==745==    by 0x402CB1: hand_from_string (input.c:44)
-==745==    by 0x402DEE: read_input (input.c:82)
-==745==    by 0x4009E0: main (main.c:55)
-==745== 
-==745== Conditional jump or move depends on uninitialised value(s)
-==745==    at 0x402B1A: add_future_card (future.c:15)
-==745==    by 0x402CB1: hand_from_string (input.c:44)
-==745==    by 0x402DEE: read_input (input.c:82)
-==745==    by 0x4009E0: main (main.c:55)
-==745== 
-==745== 
-==745== HEAP SUMMARY:
-==745==     in use at exit: 336 bytes in 24 blocks
-==745==   total heap usage: 200,173 allocs, 200,149 frees, 5,620,340 bytes allocated
-==745== 
-==745== LEAK SUMMARY:
-==745==    definitely lost: 168 bytes in 3 blocks
-==745==    indirectly lost: 168 bytes in 21 blocks
-==745==      possibly lost: 0 bytes in 0 blocks
-==745==    still reachable: 0 bytes in 0 blocks
-==745==         suppressed: 0 bytes in 0 blocks
-==745== Rerun with --leak-check=full to see details of leaked memory
-==745== 
-==745== For counts of detected and suppressed errors, rerun with: -v
-==745== Use --track-origins=yes to see where uninitialised values come from
-==745== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 13.89%
+ ** Hand 1 differed from our answer by 66.72%
+ ** Hand 2 differed from our answer by 18.89%
+*** Test case failed ***
 Running a simulation with 25000 draws for 3 hands...
-Valgrind reported errors:
-==750== Memcheck, a memory error detector
-==750== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==750== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==750== Command: ./poker inp2.txt 25000
-==750== Parent PID: 749
-==750== 
-==750== Conditional jump or move depends on uninitialised value(s)
-==750==    at 0x402A87: add_future_card (future.c:12)
-==750==    by 0x402CB1: hand_from_string (input.c:44)
-==750==    by 0x402DEE: read_input (input.c:82)
-==750==    by 0x4009E0: main (main.c:55)
-==750== 
-==750== Conditional jump or move depends on uninitialised value(s)
-==750==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==750==    by 0x402AE2: add_future_card (future.c:14)
-==750==    by 0x402CB1: hand_from_string (input.c:44)
-==750==    by 0x402DEE: read_input (input.c:82)
-==750==    by 0x4009E0: main (main.c:55)
-==750== 
-==750== Conditional jump or move depends on uninitialised value(s)
-==750==    at 0x402AF8: add_future_card (future.c:15)
-==750==    by 0x402CB1: hand_from_string (input.c:44)
-==750==    by 0x402DEE: read_input (input.c:82)
-==750==    by 0x4009E0: main (main.c:55)
-==750== 
-==750== Use of uninitialised value of size 8
-==750==    at 0x402B04: add_future_card (future.c:17)
-==750==    by 0x402CB1: hand_from_string (input.c:44)
-==750==    by 0x402DEE: read_input (input.c:82)
-==750==    by 0x4009E0: main (main.c:55)
-==750== 
-==750== Conditional jump or move depends on uninitialised value(s)
-==750==    at 0x402B1A: add_future_card (future.c:15)
-==750==    by 0x402CB1: hand_from_string (input.c:44)
-==750==    by 0x402DEE: read_input (input.c:82)
-==750==    by 0x4009E0: main (main.c:55)
-==750== 
-==750== 
-==750== HEAP SUMMARY:
-==750==     in use at exit: 336 bytes in 24 blocks
-==750==   total heap usage: 200,117 allocs, 200,093 frees, 5,618,772 bytes allocated
-==750== 
-==750== LEAK SUMMARY:
-==750==    definitely lost: 168 bytes in 3 blocks
-==750==    indirectly lost: 168 bytes in 21 blocks
-==750==      possibly lost: 0 bytes in 0 blocks
-==750==    still reachable: 0 bytes in 0 blocks
-==750==         suppressed: 0 bytes in 0 blocks
-==750== Rerun with --leak-check=full to see details of leaked memory
-==750== 
-==750== For counts of detected and suppressed errors, rerun with: -v
-==750== Use --track-origins=yes to see where uninitialised values come from
-==750== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 44.61%
+ ** Hand 1 differed from our answer by 15.98%
+ ** Hand 2 differed from our answer by 38.64%
+*** Test case failed ***
 Running a simulation with 25000 draws for 2 hands...
-Valgrind reported errors:
-==755== Memcheck, a memory error detector
-==755== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==755== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==755== Command: ./poker inp2.txt 25000
-==755== Parent PID: 754
-==755== 
-==755== Conditional jump or move depends on uninitialised value(s)
-==755==    at 0x402A87: add_future_card (future.c:12)
-==755==    by 0x402CB1: hand_from_string (input.c:44)
-==755==    by 0x402DEE: read_input (input.c:82)
-==755==    by 0x4009E0: main (main.c:55)
-==755== 
-==755== Conditional jump or move depends on uninitialised value(s)
-==755==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==755==    by 0x402AE2: add_future_card (future.c:14)
-==755==    by 0x402CB1: hand_from_string (input.c:44)
-==755==    by 0x402DEE: read_input (input.c:82)
-==755==    by 0x4009E0: main (main.c:55)
-==755== 
-==755== Conditional jump or move depends on uninitialised value(s)
-==755==    at 0x402AF8: add_future_card (future.c:15)
-==755==    by 0x402CB1: hand_from_string (input.c:44)
-==755==    by 0x402DEE: read_input (input.c:82)
-==755==    by 0x4009E0: main (main.c:55)
-==755== 
-==755== Use of uninitialised value of size 8
-==755==    at 0x402B04: add_future_card (future.c:17)
-==755==    by 0x402CB1: hand_from_string (input.c:44)
-==755==    by 0x402DEE: read_input (input.c:82)
-==755==    by 0x4009E0: main (main.c:55)
-==755== 
-==755== Conditional jump or move depends on uninitialised value(s)
-==755==    at 0x402B1A: add_future_card (future.c:15)
-==755==    by 0x402CB1: hand_from_string (input.c:44)
-==755==    by 0x402DEE: read_input (input.c:82)
-==755==    by 0x4009E0: main (main.c:55)
-==755== 
-==755== 
-==755== HEAP SUMMARY:
-==755==     in use at exit: 224 bytes in 16 blocks
-==755==   total heap usage: 100,173 allocs, 100,157 frees, 2,820,476 bytes allocated
-==755== 
-==755== LEAK SUMMARY:
-==755==    definitely lost: 112 bytes in 2 blocks
-==755==    indirectly lost: 112 bytes in 14 blocks
-==755==      possibly lost: 0 bytes in 0 blocks
-==755==    still reachable: 0 bytes in 0 blocks
-==755==         suppressed: 0 bytes in 0 blocks
-==755== Rerun with --leak-check=full to see details of leaked memory
-==755== 
-==755== For counts of detected and suppressed errors, rerun with: -v
-==755== Use --track-origins=yes to see where uninitialised values come from
-==755== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 65.98%
+ ** Hand 1 differed from our answer by 23.14%
+*** Test case failed ***
 Running a simulation with 80000 draws for 4 hands...
-Valgrind reported errors:
-==760== Memcheck, a memory error detector
-==760== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==760== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==760== Command: ./poker inp3.txt 80000
-==760== Parent PID: 759
-==760== 
-==760== Conditional jump or move depends on uninitialised value(s)
-==760==    at 0x402A87: add_future_card (future.c:12)
-==760==    by 0x402CB1: hand_from_string (input.c:44)
-==760==    by 0x402DEE: read_input (input.c:82)
-==760==    by 0x4009E0: main (main.c:55)
-==760== 
-==760== Conditional jump or move depends on uninitialised value(s)
-==760==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==760==    by 0x402AE2: add_future_card (future.c:14)
-==760==    by 0x402CB1: hand_from_string (input.c:44)
-==760==    by 0x402DEE: read_input (input.c:82)
-==760==    by 0x4009E0: main (main.c:55)
-==760== 
-==760== Conditional jump or move depends on uninitialised value(s)
-==760==    at 0x402AF8: add_future_card (future.c:15)
-==760==    by 0x402CB1: hand_from_string (input.c:44)
-==760==    by 0x402DEE: read_input (input.c:82)
-==760==    by 0x4009E0: main (main.c:55)
-==760== 
-==760== Use of uninitialised value of size 8
-==760==    at 0x402B04: add_future_card (future.c:17)
-==760==    by 0x402CB1: hand_from_string (input.c:44)
-==760==    by 0x402DEE: read_input (input.c:82)
-==760==    by 0x4009E0: main (main.c:55)
-==760== 
-==760== Conditional jump or move depends on uninitialised value(s)
-==760==    at 0x402B1A: add_future_card (future.c:15)
-==760==    by 0x402CB1: hand_from_string (input.c:44)
-==760==    by 0x402DEE: read_input (input.c:82)
-==760==    by 0x4009E0: main (main.c:55)
-==760== 
-==760== 
-==760== HEAP SUMMARY:
-==760==     in use at exit: 448 bytes in 32 blocks
-==760==   total heap usage: 960,220 allocs, 960,188 frees, 26,901,092 bytes allocated
-==760== 
-==760== LEAK SUMMARY:
-==760==    definitely lost: 224 bytes in 4 blocks
-==760==    indirectly lost: 224 bytes in 28 blocks
-==760==      possibly lost: 0 bytes in 0 blocks
-==760==    still reachable: 0 bytes in 0 blocks
-==760==         suppressed: 0 bytes in 0 blocks
-==760== Rerun with --leak-check=full to see details of leaked memory
-==760== 
-==760== For counts of detected and suppressed errors, rerun with: -v
-==760== Use --track-origins=yes to see where uninitialised values come from
-==760== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 17.94%
+ ** Hand 1 differed from our answer by 54.58%
+ ** Hand 2 differed from our answer by 18.25%
+ ** Hand 3 differed from our answer by 9.05%
+*** Test case failed ***
 Running a simulation with 30000 draws for 2 hands...
-Valgrind reported errors:
-==765== Memcheck, a memory error detector
-==765== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==765== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==765== Command: ./poker inp.txt 30000
-==765== Parent PID: 764
-==765== 
-==765== Conditional jump or move depends on uninitialised value(s)
-==765==    at 0x402A87: add_future_card (future.c:12)
-==765==    by 0x402CB1: hand_from_string (input.c:44)
-==765==    by 0x402DEE: read_input (input.c:82)
-==765==    by 0x4009E0: main (main.c:55)
-==765== 
-==765== Conditional jump or move depends on uninitialised value(s)
-==765==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==765==    by 0x402AE2: add_future_card (future.c:14)
-==765==    by 0x402CB1: hand_from_string (input.c:44)
-==765==    by 0x402DEE: read_input (input.c:82)
-==765==    by 0x4009E0: main (main.c:55)
-==765== 
-==765== Conditional jump or move depends on uninitialised value(s)
-==765==    at 0x402AF8: add_future_card (future.c:15)
-==765==    by 0x402CB1: hand_from_string (input.c:44)
-==765==    by 0x402DEE: read_input (input.c:82)
-==765==    by 0x4009E0: main (main.c:55)
-==765== 
-==765== Use of uninitialised value of size 8
-==765==    at 0x402B04: add_future_card (future.c:17)
-==765==    by 0x402CB1: hand_from_string (input.c:44)
-==765==    by 0x402DEE: read_input (input.c:82)
-==765==    by 0x4009E0: main (main.c:55)
-==765== 
-==765== Conditional jump or move depends on uninitialised value(s)
-==765==    at 0x402B1A: add_future_card (future.c:15)
-==765==    by 0x402CB1: hand_from_string (input.c:44)
-==765==    by 0x402DEE: read_input (input.c:82)
-==765==    by 0x4009E0: main (main.c:55)
-==765== 
-==765== 
-==765== HEAP SUMMARY:
-==765==     in use at exit: 224 bytes in 16 blocks
-==765==   total heap usage: 120,164 allocs, 120,148 frees, 3,379,228 bytes allocated
-==765== 
-==765== LEAK SUMMARY:
-==765==    definitely lost: 112 bytes in 2 blocks
-==765==    indirectly lost: 112 bytes in 14 blocks
-==765==      possibly lost: 0 bytes in 0 blocks
-==765==    still reachable: 0 bytes in 0 blocks
-==765==         suppressed: 0 bytes in 0 blocks
-==765== Rerun with --leak-check=full to see details of leaked memory
-==765== 
-==765== For counts of detected and suppressed errors, rerun with: -v
-==765== Use --track-origins=yes to see where uninitialised values come from
-==765== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 41.25%
+ ** Hand 1 differed from our answer by 58.33%
+*** Test case failed ***
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
-Valgrind reported errors:
-==770== Memcheck, a memory error detector
-==770== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==770== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==770== Command: ./poker inp.txt 30000
-==770== Parent PID: 769
-==770== 
-==770== Conditional jump or move depends on uninitialised value(s)
-==770==    at 0x402A87: add_future_card (future.c:12)
-==770==    by 0x402CB1: hand_from_string (input.c:44)
-==770==    by 0x402DEE: read_input (input.c:82)
-==770==    by 0x4009E0: main (main.c:55)
-==770== 
-==770== Conditional jump or move depends on uninitialised value(s)
-==770==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==770==    by 0x402AE2: add_future_card (future.c:14)
-==770==    by 0x402CB1: hand_from_string (input.c:44)
-==770==    by 0x402DEE: read_input (input.c:82)
-==770==    by 0x4009E0: main (main.c:55)
-==770== 
-==770== Conditional jump or move depends on uninitialised value(s)
-==770==    at 0x402AF8: add_future_card (future.c:15)
-==770==    by 0x402CB1: hand_from_string (input.c:44)
-==770==    by 0x402DEE: read_input (input.c:82)
-==770==    by 0x4009E0: main (main.c:55)
-==770== 
-==770== Use of uninitialised value of size 8
-==770==    at 0x402B04: add_future_card (future.c:17)
-==770==    by 0x402CB1: hand_from_string (input.c:44)
-==770==    by 0x402DEE: read_input (input.c:82)
-==770==    by 0x4009E0: main (main.c:55)
-==770== 
-==770== Conditional jump or move depends on uninitialised value(s)
-==770==    at 0x402B1A: add_future_card (future.c:15)
-==770==    by 0x402CB1: hand_from_string (input.c:44)
-==770==    by 0x402DEE: read_input (input.c:82)
-==770==    by 0x4009E0: main (main.c:55)
-==770== 
-==770== 
-==770== HEAP SUMMARY:
-==770==     in use at exit: 224 bytes in 16 blocks
-==770==   total heap usage: 120,094 allocs, 120,078 frees, 3,377,852 bytes allocated
-==770== 
-==770== LEAK SUMMARY:
-==770==    definitely lost: 112 bytes in 2 blocks
-==770==    indirectly lost: 112 bytes in 14 blocks
-==770==      possibly lost: 0 bytes in 0 blocks
-==770==    still reachable: 0 bytes in 0 blocks
-==770==         suppressed: 0 bytes in 0 blocks
-==770== Rerun with --leak-check=full to see details of leaked memory
-==770== 
-==770== For counts of detected and suppressed errors, rerun with: -v
-==770== Use --track-origins=yes to see where uninitialised values come from
-==770== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 46.42%
+ ** Hand 1 differed from our answer by 53.08%
+*** Test case failed ***
 Running a simulation with 40000 draws for 3 hands...
-Valgrind reported errors:
-==775== Memcheck, a memory error detector
-==775== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==775== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==775== Command: ./poker inp2.txt 40000
-==775== Parent PID: 774
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x402A87: add_future_card (future.c:12)
-==775==    by 0x402CB1: hand_from_string (input.c:44)
-==775==    by 0x402DEE: read_input (input.c:82)
-==775==    by 0x4009E0: main (main.c:55)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==775==    by 0x402AE2: add_future_card (future.c:14)
-==775==    by 0x402CB1: hand_from_string (input.c:44)
-==775==    by 0x402DEE: read_input (input.c:82)
-==775==    by 0x4009E0: main (main.c:55)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x402AF8: add_future_card (future.c:15)
-==775==    by 0x402CB1: hand_from_string (input.c:44)
-==775==    by 0x402DEE: read_input (input.c:82)
-==775==    by 0x4009E0: main (main.c:55)
-==775== 
-==775== Use of uninitialised value of size 8
-==775==    at 0x402B04: add_future_card (future.c:17)
-==775==    by 0x402CB1: hand_from_string (input.c:44)
-==775==    by 0x402DEE: read_input (input.c:82)
-==775==    by 0x4009E0: main (main.c:55)
-==775== 
-==775== Conditional jump or move depends on uninitialised value(s)
-==775==    at 0x402B1A: add_future_card (future.c:15)
-==775==    by 0x402CB1: hand_from_string (input.c:44)
-==775==    by 0x402DEE: read_input (input.c:82)
-==775==    by 0x4009E0: main (main.c:55)
-==775== 
-==775== 
-==775== HEAP SUMMARY:
-==775==     in use at exit: 336 bytes in 24 blocks
-==775==   total heap usage: 319,611 allocs, 319,587 frees, 8,963,172 bytes allocated
-==775== 
-==775== LEAK SUMMARY:
-==775==    definitely lost: 168 bytes in 3 blocks
-==775==    indirectly lost: 168 bytes in 21 blocks
-==775==      possibly lost: 0 bytes in 0 blocks
-==775==    still reachable: 0 bytes in 0 blocks
-==775==         suppressed: 0 bytes in 0 blocks
-==775== Rerun with --leak-check=full to see details of leaked memory
-==775== 
-==775== For counts of detected and suppressed errors, rerun with: -v
-==775== Use --track-origins=yes to see where uninitialised values come from
-==775== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+ ** Hand 0 differed from our answer by 12.98%
+ ** Hand 1 differed from our answer by 40.19%
+ ** Hand 2 differed from our answer by 46.70%
+*** Test case failed ***
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==780== Memcheck, a memory error detector
-==780== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==780== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==780== Command: ./poker whacky.txt 100000
-==780== Parent PID: 779
-==780== 
-==780== Conditional jump or move depends on uninitialised value(s)
-==780==    at 0x402A87: add_future_card (future.c:12)
-==780==    by 0x402CB1: hand_from_string (input.c:44)
-==780==    by 0x402DEE: read_input (input.c:82)
-==780==    by 0x4009E0: main (main.c:55)
-==780== 
-==780== Conditional jump or move depends on uninitialised value(s)
-==780==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==780==    by 0x402AE2: add_future_card (future.c:14)
-==780==    by 0x402CB1: hand_from_string (input.c:44)
-==780==    by 0x402DEE: read_input (input.c:82)
-==780==    by 0x4009E0: main (main.c:55)
-==780== 
-==780== Conditional jump or move depends on uninitialised value(s)
-==780==    at 0x402AF8: add_future_card (future.c:15)
-==780==    by 0x402CB1: hand_from_string (input.c:44)
-==780==    by 0x402DEE: read_input (input.c:82)
-==780==    by 0x4009E0: main (main.c:55)
-==780== 
-==780== Use of uninitialised value of size 8
-==780==    at 0x402B04: add_future_card (future.c:17)
-==780==    by 0x402CB1: hand_from_string (input.c:44)
-==780==    by 0x402DEE: read_input (input.c:82)
-==780==    by 0x4009E0: main (main.c:55)
-==780== 
-==780== Conditional jump or move depends on uninitialised value(s)
-==780==    at 0x402B1A: add_future_card (future.c:15)
-==780==    by 0x402CB1: hand_from_string (input.c:44)
-==780==    by 0x402DEE: read_input (input.c:82)
-==780==    by 0x4009E0: main (main.c:55)
-==780== 
+==1480== Memcheck, a memory error detector
+==1480== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1480== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1480== Command: ./poker whacky.txt 100000
+==1480== Parent PID: 1479
+==1480== 
 
 Overall Grade: F
