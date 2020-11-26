@@ -18,7 +18,7 @@ int main(int argc, char ** argv) {
   float p;
   int index1,index2;
   deck_t ** hands;
-  size_t n_hands;
+  size_t n_hands=0;
   future_cards_t *fc;
   deck_t * deck;
   unsigned * u=NULL;
