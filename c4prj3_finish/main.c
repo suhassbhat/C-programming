@@ -13,7 +13,7 @@
 
 int main(int argc, char ** argv) {
   int trials=10000;
-  int j,max,f1;
+  int j,max,f1,f2;
   size_t i;
   float p;
   int index1,index2;
@@ -70,12 +70,14 @@ int main(int argc, char ** argv) {
       f1=0;
       for(j=1;j<n_hands;j++)
 	{
-	  if(compare_hands(hands[max],hands[j])==-1)
+	  f2=compare_hands(hands[max],hands[j]);
+
+	  if(f2==-1)
 	    {
 	      max=j;
-	      f1=0;
+	     
 	    }
-	  if(compare_hands(hands[max],hands[j])==0)
+	  if(f2==0)
 	    {
 	      f1=1;
 	    }
@@ -94,7 +96,7 @@ int main(int argc, char ** argv) {
     }
   for(i=0;i<n_hands;i++)
     {
-      p=(float)u[i]/trials;
+      p=(float)u[i]/trials*100;
       printf("Hand %zu won %u / %u times (%.2f%%)\n",i,u[i],trials,p);
     }
   printf("And there were %u ties\n",u[n_hands]);
@@ -107,7 +109,7 @@ int main(int argc, char ** argv) {
   free_deck(deck);
   for(i=0;i<n_hands;i++)
     {
-      free(hands[i]);
+      free_deck(hands[i]);
     }
   free(hands);
   for(i=0;i<fc->n_decks;i++)
