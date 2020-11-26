@@ -52,6 +52,8 @@ int main(int argc, char ** argv) {
       exit(EXIT_FAILURE);
     }
   fc = (future_cards_t *)malloc(sizeof(future_cards_t));
+  fc->n_decks=0;
+  fc->decks=NULL;
   hands = read_input (f,&n_hands,fc);
   deck =build_remaining_deck(hands,n_hands);
   u = (unsigned *)malloc((n_hands+1)*sizeof(unsigned));
