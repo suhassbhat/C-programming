@@ -42,7 +42,7 @@ deck_t * hand_from_string(const char * line,future_cards_t * fc)
 	      j++;
 		}
 	      add_future_card(fc,index2,add_empty_card(d));
-	      i++;
+	      i=i+j;
 	      continue;
 	    }
 	  else
